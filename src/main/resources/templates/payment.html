@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+	.amount{
+		display: block;
+	}
+</style>
+<body>
+	<h1>入金画面</h1>
+	<form action="/payment" method="GET">
+		<p>残高</p>
+		<input class="amount" type="text" th:value="${name}">
+		<p>入金額</p>
+		<input class="amount" type="text" name="name">
+	<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

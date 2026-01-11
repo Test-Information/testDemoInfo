@@ -15,7 +15,7 @@ public class TodoController {
         this.repository = repository;
     }
 
-    // データを保存するURL: http://localhost:8080/add?title=買い物
+    // データを保存するURL: http://localhost:8080/add?title=データ内容
     @GetMapping("/add")
     public String add(@RequestParam String title) {
         Todo todo = new Todo();
