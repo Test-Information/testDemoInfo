@@ -5,19 +5,23 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * データベースエンティティ
+ * 
+ */
 @Entity
-public class Todo {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private boolean completed;
+    private String name;
+    private Long balance;
 
     // ゲッターとセッター（またはLombokを使用）
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
-    public boolean isCompleted() { return completed; }
-    public void setCompleted(boolean completed) { this.completed = completed; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public Long getBalance() { return balance; }
+    public void setBalance(Long balance) { this.balance = balance; }
 }

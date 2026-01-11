@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+
+</style>
+<script th:inline="javascript">
+	window.onload = function(){
+		const result = /*[[${result}]]*/ null;
+		if(result != null){
+			alert(result.replaceAll('\\n', '\n'));
+		}
+	}
+</script>
+<body>
+	<h1>顧客作成画面</h1>
+	<form action="/customer" method="GET">
+		<input type="hidden" name="send" value="true">
+		<div class="box"><span>顧客名:</span><input type="text" name="name"    pattern="^(?!.*[0-9A-Za-z]).*$" placeholder="作成する顧客名を入力してください" required th:value="${name}"></div>
+		<div class="box"><span>入金額:</span><input type="text" name="balance" pattern="\d*" placeholder="作成する顧客口座に入金する金額を入力してください" th:value="${balance}"></div>
+	<input type="submit" value="顧客作成">
+	</form>
+</body>
+</html>
